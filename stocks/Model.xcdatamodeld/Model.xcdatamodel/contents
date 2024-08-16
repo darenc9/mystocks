@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22757" systemVersion="23G93" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="StockEntity" representedClassName="StockEntity" syncable="YES">
+        <attribute name="exchange" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="performanceId" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="rank" optional="YES" attributeType="String"/>
+        <attribute name="sortIndex" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="ticker" optional="YES" attributeType="String"/>
+        <relationship name="stockList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StockListEntity"/>
+    </entity>
+    <entity name="StockListEntity" representedClassName="StockListEntity" syncable="YES">
+        <attribute name="listType" optional="YES" attributeType="String"/>
+        <relationship name="stocks" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="StockEntity"/>
+    </entity>
+</model>
